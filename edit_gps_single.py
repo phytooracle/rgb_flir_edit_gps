@@ -76,8 +76,8 @@ def main():
         end2 = time.time()
         ind_time = end2 - start2
         print(f'Done - Processing time: {ind_time}' + "\n")
-    else:
-        continue
+    #else:
+    #    continue
 
     end = time.time()
     total_time = end - start
