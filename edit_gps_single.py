@@ -68,7 +68,7 @@ def main():
         #print(f'Upper left: {u_l_lat} {u_l_long} "\n" Lower right: {l_r_lat} {l_r_long}')
         print(f'>{num:5} {filename}')
 
-        basename = os.path.splitext(os.path.basename(i))[0]
+        basename = os.path.splitext(os.path.basename(args.tif))[0]
         outfile = args.outdir + '/' + basename + '_corrected.tif'
         cmd = f'gdal_translate -of "GTiff" -co "COMPRESS=LZW" -a_ullr {u_l_long} {u_l_lat} {l_r_long} {l_r_lat} -a_srs EPSG:4326 {args.tif} {outfile}'
         subprocess.call(cmd, shell=True)
